@@ -1,0 +1,62 @@
+ISOBANG version 0.5
+written by Matt McFarland
+
+SOBANG is a Tiled Isometric engine which takes advantage of miscellaneous properties and gives them purpose.  ISOBANG allows you to set much of the game logic within Tiled itself, and is fully documented so it can be tweaked easily.  It is an independant engine, meaning all you need to do is install the isobang folder just like flashpunk, and follow a few steps to get started.  With ISOBANG you can do the folllowing in TILED ALONE!:  
+
+Set Map Properties
+Create map variables which isobang creates as seperate objects
+Change map theme to easily swap tilesets (advanced)
+Set Tile Layer Properties
+Configure z-ordering
+Render a layer as one bitmap image
+Render a layer as many bitmapped entities
+Render a layer as a collision mask
+Create Events inside Tiled
+Events are a special object in that are executed by triggers.
+modify map variables
+disable or enable map triggers
+pan the camera with easing functions, duration
+display a message
+spawn entities
+Teleport entities
+Remove entities
+Stack events to occur after other events are completed
+Create Triggers inside Tiled
+A trigger is a special object that executes an event as described above.
+Timed triggers
+Collision triggers
+IfThen triggers
+Start up guide:
+Learn TILED
+1. Install TILED from http://www.mapeditor.org
+2. Brush up on your TILED skills and learn how to use TILED with www.mapeditor.org wiki
+Install ISOBANG
+3. Install ISOBANG just like you install flashpunk, right into the net folder of your project.
+3. Make you an ISOBANG compatible map, consult the ISOBANG wiki for documentation.
+4. Configure the Config.as file in the isobang folder, you'll want to set up your tileset classes and Map Entity specific classes there.
+5. Embed your TILED TMX file as a class.
+Fire it up!
+6. Create a new World that extends MapWorld:
+Code:
+	import net.isobang.MapWorld;
+	import net.flashpunk.utils.Input;
+	import net.flashpunk.FP;
+	
+	public class GameWorld extends MapWorld
+	{
+	
+		public function GameWorld()
+		{
+			loadMap(M.TEST);
+		}
+
+		override public function begin():void
+		{
+			super.init();
+		}
+		
+That's it!!
+
+Please note this is the first public release, and I am releasing this as an open source effort in hopes that some of you will help make this even better!  If you have any questions please let me know.  I'm looking forward to building this engine with you and making something great for the flashpunk community.
+
+Thanks!
