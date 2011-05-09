@@ -76,7 +76,7 @@ package net.isobang
 					var tile:int = l.tiles[tileIndex];
 					for each (var t:DataTileSet in map.tileSetData) {
 						if (tile < t.maxTiles && tile >= t.firstGid) {
-							layerBMP.copyPixels(t.image, new Rectangle(t.tileRow[tile], t.tileCol[tile], t.tileWidth, t.tileHeight),tileToPixelCoords(map,new Point(tileX,tileY)));
+							layerBMP.copyPixels(t.image, new Rectangle(t.tileRow[tile], t.tileCol[tile], t.tileWidth, t.tileHeight),tileToPixelCoords(map,new Point(tileX,tileY)),layerBMP,null,true);
 						}
 					}
 					tileIndex++;
