@@ -70,13 +70,13 @@ package net.isobang
 		private static function createDefaultLayer(map:Map, l:DataTileLayer):void
 		{
 			var tileIndex:int = 0;
-			var layerBMP:BitmapData = new BitmapData(map.pixelWidth+map.tileWidth, map.pixelHeight+map.tileHeight, false, 0);
+			var layerBMP:BitmapData = new BitmapData(map.pixelWidth+map.tileWidth, map.pixelHeight+map.tileHeight, true, 0);
 			for (var tileY:int = 0; tileY < map.height; tileY++) {
 				for (var tileX:int = 0; tileX < map.width; tileX++) {
 					var tile:int = l.tiles[tileIndex];
 					for each (var t:DataTileSet in map.tileSetData) {
 						if (tile < t.maxTiles && tile >= t.firstGid) {
-							layerBMP.copyPixels(t.image, new Rectangle(t.tileRow[tile], t.tileCol[tile], t.tileWidth, t.tileHeight),tileToPixelCoords(map,new Point(tileX,tileY)),layerBMP,null,true);
+							layerBMP.copyPixels(t.image, new Rectangle(t.tileRow[tile], t.tileCol[tile], t.tileWidth, t.tileHeight),tileToPixelCoords(map,new Point(tileX,tileY)),null,null,true);
 						}
 					}
 					tileIndex++;
